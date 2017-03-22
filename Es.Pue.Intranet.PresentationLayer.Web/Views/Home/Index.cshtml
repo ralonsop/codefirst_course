@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body ng-app="app" id="content">
+    <div ng-controller="indexController"> 
+        <button id="btnanadir" value="Añadir Candidato" ng-click="anadirCandidato()">Añadir Candidato</button>
+        <input type="text" id="Cliente" ng-model="Candidate.Name" />
+        {{Candidate.Name}}
+
+        <div ng-repeat="candidate in Candidates">
+            {{candidate.Id}}
+        </div>
+
+        <button id="btnsave" ng-click="guardarCandidatos()">Guardar Candidatos</button>
+    </div>
+    <!--External Scripts-->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+
+    <!--AppInit-->
+    <script src="~/angular/PresentationLayer/Controllers/appInit.js"></script>
+    <!--PersistenceLayer-->
+    <script src="~/angular/Model/PersistenceLayer/candidates/candidateDAO_IndexedDB.js"></script>
+    <script src="~/angular/Model/PersistenceLayer/candidates/candidateDAO_LocalStorage.js"></script>
+    <script src="~/angular/Model/PersistenceLayer/candidates/candidateDAO_REST.js"></script>
+    <!--ServiceLayer-->
+    <script src="~/angular/Model/ServiceLayer/candidateService.js"></script>
+    <!--Controllers-->
+    <script src="~/angular/PresentationLayer/Controllers/Home/Index/IndexController.js"></script>
+</body>
+</html>

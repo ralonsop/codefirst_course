@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Es.Pue.Intranet.Model.BusinessLayer.Entities.Candidates.Candidate">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAQAAAEAAAAAAAAAQAAAgAAA=</HashCode>
+      <FileName>Entities\Candidates\Candidate.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Login" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="CandidateData" />
+      <Property Name="Exams" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Es.Pue.Intranet.Model.BusinessLayer.Entities.Candidates.CandidateData">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Candidates\CandidateData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Es.Pue.Intranet.Model.BusinessLayer.Entities.Candidates.Exam">
+    <Position X="3.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Candidates\Exam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Es.Pue.Intranet.Model.BusinessLayer.Entities.Candidates.Login">
+    <Position X="9.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAACAAAAAAAAAAE=</HashCode>
+      <FileName>Entities\Candidates\Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Es.Pue.Intranet.Model.BusinessLayer.Entities.Candidates.Recruiter">
+    <Position X="6.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQQAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Entities\Candidates\Recruiter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Login" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

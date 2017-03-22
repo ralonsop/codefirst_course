@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8FDCD03-10C4-404C-97F9-7CE842BEAC6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Es.Pue.Intranet.Model.ServiceLayer</RootNamespace>
+    <AssemblyName>Es.Pue.Intranet.Model.ServiceLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\Candidates\ICandidateService.cs" />
+    <Compile Include="API\Projects\IProjectService.cs" />
+    <Compile Include="Impl\Candidates\CandidateService.cs" />
+    <Compile Include="Impl\Projects\ProjectService.cs" />
+    <Compile Include="Managers\ServiceManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Es.Pue.Intranet.Model.BusinessLayer\Es.Pue.Intranet.Model.BusinessLayer.csproj">
+      <Project>{a71a3c1e-09a9-425b-bfcf-b44f89bf955b}</Project>
+      <Name>Es.Pue.Intranet.Model.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Es.Pue.Intranet.Model.PersistenceLayer\Es.Pue.Intranet.Model.PersistenceLayer.csproj">
+      <Project>{d9badd60-7fc9-4d89-a0eb-65e753add057}</Project>
+      <Name>Es.Pue.Intranet.Model.PersistenceLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Es.Pue.Intranet.UtilityLayer\Es.Pue.Intranet.UtilityLayer.csproj">
+      <Project>{ac72a23d-e9cd-4ff6-bcdb-77528bd259e4}</Project>
+      <Name>Es.Pue.Intranet.UtilityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

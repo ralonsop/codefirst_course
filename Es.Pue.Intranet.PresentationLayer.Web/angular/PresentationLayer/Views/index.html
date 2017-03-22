@@ -1,0 +1,122 @@
+<html>
+<head>
+  <link href="../Styles/Index/index.css" rel="stylesheet"/>
+
+</head>
+<body ng-app='app' 
+ng-controller='indexController as ctr'
+>
+<section id='secProyectos'>
+<input type="text" ng-model='ctr.nuevoProyecto.Name'>
+{{ctr.nuevoProyecto.Name}}
+<button ng-click='ctr.addProject()'>
+    Añadir Proyecto
+</button>
+<button ng-click='ctr.saveProjects()'>
+    Guardar Proyectos
+</button>
+
+
+
+<div ng-repeat='project in ctr.projects
+| orderBy:ctr.orderByProperty:ctr.orderByDirection track by project.Id'
+ondrop="drop(event)" 
+ondragover="allowDrop(event)"
+class="personContainer"
+data-object-id={{project.Id}}
+>
+    <div draggable="true" data-object-id={{project.Id}}
+ondragstart="drag(event)" 
+class="personItem"
+>    
+        {{project.Name}}
+        {{persona.Cardinality}}
+        <button ng-click="ctr.removeProject(project)">Eliminar</button>
+        <button ng-click="ctr.selectProject(project)">Select</button>
+    </div>
+</div>
+
+
+
+</section>
+
+<section id='secPersonas'>
+	
+<input type="text" ng-model='ctr.nuevaPersona.Nif' 
+placeholder="NIF">
+
+<input type="text" ng-model='ctr.nuevaPersona.Name' placeholder="Nombre">
+
+<input type="text" ng-model='ctr.nuevaPersona.Surname' placeholder="Apellidos">
+
+{{ctr.nuevaPersona.Nif}}
+{{ctr.nuevaPersona.Name}}
+{{ctr.nuevaPersona.Surname}}
+
+<br>
+<button ng-click='ctr.addPerson()'>
+    Añadir Persona
+</button>
+<div>
+    <span ng-click="ctr.ordenar('Nif')">NIF</span>
+    <span ng-click="ctr.ordenar('Name')">Name</span>
+    <span ng-click="ctr.ordenar('Surname')">Apellidos</span>
+</div>
+<div ng-repeat='persona in ctr.selectedProject.Team
+| orderBy:ctr.orderByProperty:ctr.orderByDirection track by persona.Id'
+ondrop="drop(event)" 
+ondragover="allowDrop(event)"
+class="personContainer"
+data-object-id={{persona.Id}}
+>
+    <div draggable="true" data-object-id={{persona.Id}}
+ondragstart="drag(event)" 
+class="personItem"
+>
+<input type="text" 
+ng-model="persona.Nif"
+ng-model-options="{ updateOn: 'blur' }"
+ >
+        {{persona.Nif}}
+        {{persona.Name}}
+        {{persona.Surname}}
+        {{persona.Cardinality}}
+        <button ng-click="ctr.removePerson(persona)">Eliminar</button>
+    </div>
+</div>
+
+
+</section>
+
+
+
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+<!--Capa de Persistencia-->
+ <script type="text/javascript" 
+            src="../../Model/PersistenceLayer/projects/projectDAO_LocalStorage.js">
+    </script>
+    <script type="text/javascript"
+            src="../../Model/PersistenceLayer/projects/projectDAO_REST.js">
+    </script>
+
+
+<!--Capa de Servicios-->
+
+ <script type="text/javascript" 
+            src="../../Model/ServiceLayer/projectsService.js">
+    </script>
+    
+<!--Capa de Controladores-->
+ <script type="text/javascript" 
+            src="../Controllers/appInit.js">
+    </script>
+
+ <script type="text/javascript" 
+            src="../Controllers/Index/indexController.js">
+
+    </script>
+</body>
+</html>

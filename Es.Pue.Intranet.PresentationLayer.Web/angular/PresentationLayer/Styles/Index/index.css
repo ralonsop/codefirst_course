@@ -1,0 +1,11 @@
+.personContainer{
+height: 50px;
+background-color: darkgray;
+padding: 5px;
+margin:5px;
+}
+
+.personItem{
+height: 40px;
+background-color: #d3d3d3;
+}
